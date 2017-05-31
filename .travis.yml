@@ -7,11 +7,11 @@ branches:
     - master
 
 before_script:
-  - npm install -g @angular/cli
+  - npm install
   
 script:
-  - ng build --prod
-  - bash ./.build.sh
+  - ng build
+  
   
 before_deploy:
   - cd dist
