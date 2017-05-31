@@ -18,7 +18,7 @@ before_deploy:
 deploy:
   provider: bluemixcloudfoundry
   skip_cleanup: true
-  manifest: manifest.yml
+  manifest: ./manifest.yml
   username: pradnyamankar@yahoo.com
   password: Persistent@123
   organization: 'Persistent Sys L'
