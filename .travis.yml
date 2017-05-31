@@ -12,7 +12,3 @@ before_script:
 script:
   - ng build
   
-before_deploy:
-  - cd dist
-  
-
