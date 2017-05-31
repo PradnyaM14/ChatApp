@@ -12,17 +12,7 @@ before_script:
 script:
   - ng build
   
-  
 before_deploy:
   - cd dist
   
-deploy:
-  provider: bluemixcloudfoundry
-  skip_cleanup: true
-  manifest: manifest.yml
-  username: pradnyamankar@yahoo.com
-  password: Persistent@123
-  organization: Persistent Sys L
-  space: dev
-  on:
-    branch: master
+
