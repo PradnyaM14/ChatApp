@@ -6,13 +6,13 @@ branches:
   - master
 before_script:
 - npm install
-- cf target -o 'Persistent Sys L' -s dev
 script:
 - ng build
 before_deploy:
 - cd dist
 deploy:
-  provider: cloudfoundry
+  edge: true
+  provider: bluemixcloudfoundry
   api: https://api.ng.bluemix.net
   username: pradnyamankar@yahoo.com
   password:
