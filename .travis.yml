@@ -6,6 +6,7 @@ branches:
   - master
 before_script:
 - npm install
+- cf target -o 'Persistent Sys L' -s dev
 script:
 - ng build
 before_deploy:
