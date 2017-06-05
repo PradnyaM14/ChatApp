@@ -9,8 +9,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ChatService {
 
-  //url: string = "http://localhost:6002/api/message"
-  url: string = "https://botapp.mybluemix.net/api/message"
+  //url: string = "http://localhost:6003/api/message"
+  url: string = "https://mybotapp.mybluemix.net/api/message"
   
   constructor(private http:Http) { }
   
@@ -20,7 +20,7 @@ export class ChatService {
     
     let options = new RequestOptions({ headers: headers });
     
-    var payload = { workspace_id: "4ad9e7fe-8b34-4506-9281-5b9aed82e9a7",
+    var payload = { workspace_id: "4f4e9e5e-6b8a-492f-9bb4-356e92078557",
 		context: {},
 		input: {"text": message} || {}
 	  };
@@ -33,10 +33,9 @@ export class ChatService {
   sendMessageWithPromise(message:string): Promise<string[]> {
     
     let headers = new Headers({ 'Content-Type': 'application/json' });
-    
     let options = new RequestOptions({ headers: headers });
     
-    var payload = { workspace_id: "4ad9e7fe-8b34-4506-9281-5b9aed82e9a7",
+    var payload = { workspace_id: "4f4e9e5e-6b8a-492f-9bb4-356e92078557",
 		context: {},
 		input: {"text": message} || {}
 	  };
