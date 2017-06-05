@@ -2,19 +2,24 @@ dist: trusty
 sudo: required
 language: node_js
 node_js:
-  - "5"
-os:
-  - linux
-env:
-  global:
-    - DBUS_SESSION_BUS_ADDRESS=/dev/null
-    - DISPLAY=:99.0
-    - CHROME_BIN=chromium-browser
+- 7.9.0
+branches:
+  only:
+  - master
 before_script:
-  - sh -e /etc/init.d/xvfb start
-install:
-  - npm install
+- npm install
 script:
-  #- npm run lint // This is used for formatting related errors which include white spaces
-  - npm run test:once
-  - npm run e2e
+- ng build
+before_deploy:
+- cd dist
+deploy:
+  provider: bluemixcloudfoundry
+  skip_cleanup: true
+  api: https://api.ng.bluemix.net
+  username: $BLUEMIX_USER
+  password: $BLUEMIX_PASS
+  organization: $BLUEMIX_ORGANIZATION
+  space: $BLUEMIX_SPACE
+  app: ChatApp
+  on:
+    repo: PradnyaM14/ChatApp
