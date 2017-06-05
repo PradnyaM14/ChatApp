@@ -13,12 +13,11 @@ before_deploy:
 deploy:
   edge: true
   skip_cleanup: true
-  manifest: manifest.yml
   provider: bluemixcloudfoundry
   api: https://api.ng.bluemix.net
   username: $BLUEMIX_USER
   password: $BLUEMIX_PASS
-  organization: $BLUEMIX_ORGANIZATION
+  organization: "$BLUEMIX_ORGANIZATION"
   space: $BLUEMIX_SPACE
   
   on:
