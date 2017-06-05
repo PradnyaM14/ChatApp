@@ -12,12 +12,15 @@ before_deploy:
 - cd dist
 deploy:
   edge: true
+  skip_cleanup: true
+  manifest: manifest.yml
   provider: bluemixcloudfoundry
   api: https://api.ng.bluemix.net
-  username: pradnyamankar@yahoo.com
-  password:
-    secure: rgeknHwurRHRX0QGvN7bOoyAoLxK3aBeLjkMoavv/+xmDFYH3ibi3HnSlF6dmoygbefkvEBTG1xwQcFQ6bkVNEZikLBB9a16XkhGgx4P1dVCOM5jg8mfTZbWiYs39V1ajzKbkL7XMCfE5J/N8wDB0yR6NXjE2PYJ/9iQagVJhXgM/cl9VHZNZjKXLBa1M9VD2wzvsVk9tRa0G5ndpkFCpNvwCb+lUDqSoHoGDooQdMR2C3WgUAhq8DsyfG6b9QH+4hM8+4ClkUou1OOLKxOyxPXb2KTkJ4cwXj+WzTUy3IGR5/j1mCYC5lYIwSoU7u6Chu1YFS7jI2/ITlow+ibcw3mu9uYpm5B/kI9G1jDuOPYV2e+hgjSafMj3MpazAp7qeg5jbHWzo3+RXpPpxgJ6L7u42FF7Siq4ax/2eOMT6lDyary8CfUQaytcFdCkS/nE5ZwxjOjOWP1WGkFTEqln6m1dHogcCCFLL6K69A2rUkpJj/SrTIWF9hoR1Xls9XYQMh88mvQAj4j3yjdCBey7dNUnrmf10lU3gS4uDW6OEJGJWMAKpISq4iehyKBzvje44X1ZAlyCsnUxpwWlsI9ofNJy1irQ9DiwXfklZlQtq2O7OYl3Ah/Zxh+r3YfFMm9e82cTFtbt+IY5DS6/uYQ7bVOyM8BjfYAcuZSV6/Su47A=
-  organization: Persistent Sys L
-  space: dev
+  username: $BLUEMIX_USER
+  password: $BLUEMIX_PASS
+  organization: $BLUEMIX_ORGANIZATION
+  space: $BLUEMIX_SPACE
+  
   on:
     repo: PradnyaM14/ChatApp
+    branch: master
