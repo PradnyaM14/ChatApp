@@ -1,8 +1,12 @@
 dist: trusty
 sudo: required
+os: linux
 language: node_js
 node_js:
 - 7.9.0
+env:
+  global:
+  - CF_APP=ChatApp
 branches:
   only:
   - master
@@ -13,6 +17,7 @@ script:
 before_deploy:
 - cd dist
 deploy:
+  edge: true
   provider: bluemixcloudfoundry
   skip_cleanup: true
   api: https://api.ng.bluemix.net
@@ -23,3 +28,4 @@ deploy:
   app: ChatApp
   on:
     repo: PradnyaM14/ChatApp
+    condition: $TRAVIS_OS_NAME = linux
