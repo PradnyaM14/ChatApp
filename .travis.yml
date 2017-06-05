@@ -5,9 +5,11 @@ branches:
   only:
   - master
 before_script:
-- sudo npm install
+- npm install
 script:
-- ng build
+#- ng build
+- npm run test:once
+- npm run e2e
 deploy:
   edge: true
   provider: bluemixcloudfoundry
