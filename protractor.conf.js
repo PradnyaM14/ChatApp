@@ -8,9 +8,7 @@ exports.config = {
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
-  capabilities: {
-    'browserName': 'chrome'
-  },
+  capabilities: {'browserName': 'chrome', 'version': '', 'platform': 'ANY'},
   directConnect: true,
   baseUrl: 'http://0.0.0.0:8080/',
   framework: 'jasmine',
