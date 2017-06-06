@@ -10,7 +10,8 @@ before_script:
 install:
 - npm install
 script:
-- ng build
+#- ng build
+- npm run e2e
 deploy:
   edge: true
   provider: bluemixcloudfoundry
