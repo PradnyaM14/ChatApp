@@ -2,7 +2,7 @@ dist: trusty
 sudo: required
 language: node_js
 node_js:
-- 6.10.3
+- 7.9.0
 branches:
   only:
   - master
@@ -16,8 +16,8 @@ env:
 before_script:
 - sh -e /etc/init.d/xvfb start
 install:
-- npm install chromedriver
 - npm install
+- nvm install
 script:
 #- ng build
 - npm run e2e
