@@ -19,10 +19,9 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 install:
 - npm install
-#- nvm install
 script:
-#- ng build
-- npm run e2e
+- ng serve
+#- npm run e2e
 deploy:
   edge: true
   provider: bluemixcloudfoundry
