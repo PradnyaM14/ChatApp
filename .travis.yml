@@ -20,7 +20,7 @@ before_install:
 install:
 - npm install
 script:
-- ng serve
+- ng build
 #- npm run e2e
 deploy:
   edge: true
